@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#d9571f">
+<meta name="description" content="Taj Namaste — Indian & Nepali Restaurant in Okayama, Japan.">
+<title>Taj Namaste | Nepal • India • Japan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --orange:#d9571f; --orange2:#f47a35; --ink:#241916; --muted:#76655d;
+  --cream:#fffaf5; --line:#eadbd0; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#f7eee7;color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
+}
+.page{max-width:720px;margin:auto;background:var(--cream);min-height:100vh;overflow:hidden;position:relative;isolation:isolate}
+/* Faded Himalayan and Taj Mahal artwork sits behind the page content */
+.page:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.09;
+  background-image:url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80"),url("https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80");
+  background-repeat:no-repeat,no-repeat;background-position:left 520px,right 1180px;background-size:100% auto,78% auto;
+}
+
+/* REAL PHOTOGRAPHIC HERO — deliberately static, no animation */
+.hero{
+  min-height:650px;position:relative;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(180deg,rgba(20,10,7,.06) 0%,rgba(20,10,7,.12) 32%,rgba(20,10,7,.72) 100%),
+    url("https://images.unsplash.com/photo-1615752592676-f6bd84f9419d?auto=format&fit=crop&fm=jpg&q=85&w=1800")
+    center 38%/cover no-repeat;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(217,87,31,.18),transparent 55%,rgba(255,255,255,.04));
+}
+.hero-content{position:relative;z-index:2;padding:34px 25px 32px;color:white;width:100%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;border:1px solid rgba(255,255,255,.42);
+  background:rgba(30,15,10,.22);backdrop-filter:blur(10px);padding:9px 12px;border-radius:999px;
+}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#ff9a5c}
+h1{
+  font-family:"Playfair Display",Georgia,serif;font-size:clamp(50px,13vw,78px);
+  line-height:.9;margin:18px 0 14px;letter-spacing:-.045em
+}
+.hero-copy{font-size:16px;line-height:1.6;max-width:500px;margin:0;color:#fff7f2}
+.location{margin-top:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ffe6d8}
+
+/* brand strip */
+.brand-strip{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:1px solid var(--line)}
+.brand-strip div{padding:13px 4px;text-align:center;border-right:1px solid var(--line);font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.brand-strip div:last-child{border:0}
+.brand-strip b{display:block;font-size:18px;font-family:"Playfair Display",serif;letter-spacing:0;margin-bottom:3px}
+
+/* links */
+.links{padding:30px 18px 18px}
+.kicker{text-align:center;color:var(--orange);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+h2{text-align:center;font-family:"Playfair Display",Georgia,serif;font-size:30px;margin:7px 0 5px}
+.lead{text-align:center;color:var(--muted);font-size:13px;margin:0 auto 21px;max-width:450px;line-height:1.6}
+.link{
+  display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
+  padding:15px 16px;margin:10px 0;border:1px solid var(--line);border-radius:17px;
+  background:#fff;box-shadow:0 7px 22px rgba(85,45,25,.07);
+}
+.link:active{transform:scale(.99)}
+.icon{
+  width:45px;height:45px;border-radius:13px;display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:18px;flex:0 0 45px
+}
+.insta{background:linear-gradient(135deg,#6d2cc8,#e1306c 60%,#ff9b43)}
+.tiktok{background:#121212}
+.google{background:#fff;border:1px solid #ddd;color:#4285f4!important}
+.website{background:var(--orange)}
+.label{font-size:15px;font-weight:700}.sub{display:block;color:#88756c;font-size:11px;margin-top:3px}
+.arrow{margin-left:auto;font-size:25px;color:#bd9c8a}
+
+/* story panel */
+.story{
+  margin:25px 18px 10px;border-radius:22px;overflow:hidden;position:relative;
+  min-height:245px;color:white;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(180deg,rgba(35,18,12,.02),rgba(35,18,12,.82)),
+    url("https://images.unsplash.com/photo-1508196476590-9511757a5cbf?auto=format&fit=crop&fm=jpg&q=82&w=1200")
+    center/cover no-repeat;
+}
+.story:after{
+  content:"INDIA";position:absolute;right:-12px;top:24px;writing-mode:vertical-rl;
+  font-size:10px;font-weight:700;letter-spacing:.45em;opacity:.7
+}
+.story-copy{padding:22px;position:relative;z-index:2}
+.story-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#ffd0b5;font-weight:700}
+.story h3{font-family:"Playfair Display",serif;font-size:27px;line-height:1.12;margin:8px 0}
+.story p{font-size:12px;line-height:1.6;margin:0;color:#fff2e9;max-width:470px}
+
+/* visual language */
+.spice-row{display:flex;gap:8px;justify-content:center;margin:28px auto 18px;opacity:.8}
+.spice-row span{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.spice-row span:nth-child(2){background:#e6a32d;width:5px;height:5px}
+.spice-row span:nth-child(3){background:#8b3722}
+.spice-row span:nth-child(4){background:#e6a32d;width:5px;height:5px}
+.quote{
+  margin:0 25px;text-align:center;font-family:"Playfair Display",Georgia,serif;
+  font-size:22px;line-height:1.45;color:#35211b
+}
+.quote em{color:var(--orange);font-style:normal}
+.quote-by{text-align:center;color:#947a6c;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 28px}
+
+/* food story gallery */
+.food-gallery{padding:25px 18px 8px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.gallery-card{position:relative;min-height:175px;border-radius:17px;overflow:hidden;background:#e7d1c0}
+.gallery-card img{width:100%;height:100%;min-height:175px;object-fit:cover;display:block;position:absolute;inset:0}
+.gallery-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(25,12,7,.76))}
+.gallery-card .gallery-title{position:absolute;z-index:1;left:12px;right:10px;bottom:12px;color:#fff;font-family:"Playfair Display",serif;font-size:20px;line-height:1.1}
+.gallery-card .gallery-sub{display:block;font-family:"DM Sans",sans-serif;font-size:10px;line-height:1.4;margin-top:5px;color:#fff1e8}
+.gallery-card.wide{grid-column:1/-1;min-height:195px}
+.gallery-card.wide img{min-height:195px}
+.halal-panel{margin:22px 18px 8px;padding:22px 18px;border-radius:20px;background:#fff4e8;border:1px solid #f0d1b6;text-align:center}
+.halal-mark{display:inline-block;background:#356b42;color:white;padding:7px 12px;border-radius:999px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.halal-panel h2{margin-top:12px}
+.halal-panel p{font-size:13px;line-height:1.65;color:#6f5548;margin:9px 0 0}
+.halal-note{font-size:11px!important;color:#876f63!important}
+/* subtle Japanese detail, static */
+.japan{
+  margin:0 18px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:18px 4px;display:flex;align-items:center;justify-content:center;gap:15px;color:#806d64
+}
+.japan .jp{font-family:serif;font-size:24px;color:var(--orange)}
+.japan .txt{font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+
+footer{text-align:center;padding:5px 20px 30px;color:#9a8277;font-size:10px;letter-spacing:.08em}
+@media(min-width:700px){body{padding:22px 0}.page{border-radius:28px;box-shadow:0 25px 80px rgba(50,25,10,.15)}.hero{border-radius:28px 28px 0 0}}
+</style>
+</head>
+<body>
+<main class="page">
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Indian & Nepali Restaurant</div>
+    <h1>Taj<br>Namaste</h1>
+    <p class="hero-copy">From the Himalayas and the heart of India to our home in Okayama — authentic flavours, warm hospitality, and a taste worth remembering.</p>
+    <div class="location">Okayama · Japan</div>
+  </div>
+</section>
+
+<section class="brand-strip">
+  <div><b>🇳🇵</b>Nepal</div>
+  <div><b>🇮🇳</b>India</div>
+  <div><b>🇯🇵</b>Japan</div>
+</section>
+
+<section class="links">
+  <div class="kicker">Stay connected</div>
+  <h2>Find Taj Namaste</h2>
+  <p class="lead">Follow our food, discover the restaurant, and share your experience with us.</p>
+
+  <a class="link" href="https://www.instagram.com/taj_.namaste?stkn=MXRqZTFtaGdjZzNoaA==" target="_blank" rel="noopener">
+    <span class="icon insta">◎</span>
+    <span><span class="label">Instagram</span><span class="sub">@taj_.namaste · Photos & updates</span></span>
+    <span class="arrow">›</span>
+  </a>
+
+  <a class="link" href="https://www.tiktok.com/@tajnamastenp?_r=1&_t=ZS-9ALT8oycpEL" target="_blank" rel="noopener">
+    <span class="icon tiktok">♪</span>
+    <span><span class="label">TikTok</span><span class="sub">@tajnamastenp · Food & moments</span></span>
+    <span class="arrow">›</span>
+  </a>
+
+  <a class="link" href="https://maps.app.goo.gl/LpVeQ91dHfemVgyZ7?g_st=ic" target="_blank" rel="noopener">
+    <span class="icon google">G</span>
+    <span><span class="label">Google Maps & Reviews</span><span class="sub">Find us · Directions · Leave a review</span></span>
+    <span class="arrow">›</span>
+  </a>
+
+  <a class="link" href="https://techminto2-creator.github.io/taj-namaste/" target="_blank" rel="noopener">
+    <span class="icon website">↗</span>
+    <span><span class="label">Official Website</span><span class="sub">Menu · Restaurant · Information</span></span>
+    <span class="arrow">›</span>
+  </a>
+</section>
+
+<section class="story">
+  <div class="story-copy">
+    <div class="story-label">Our roots</div>
+    <h3>From the mountains<br>to your table.</h3>
+    <p>Inspired by the Himalayas, Indian kitchens, Nepali hospitality, and our life in Japan.</p>
+  </div>
+</section>
+
+
+
+<section class="halal-panel">
+  <div class="halal-mark">Halal food enquiries welcome</div>
+  <h2>Looking for Halal options?</h2>
+  <p>We want every guest to feel welcome at Taj Namaste. Please ask our team which dishes and ingredients are suitable for your halal dietary needs before ordering.</p>
+  <p class="halal-note">Preparation methods and ingredient details can vary by dish. Our team can help you check before you order.</p>
+</section>
+
+<div class="spice-row"><span></span><span></span><span></span><span></span></div>
+
+<p class="quote">“<em>From the Himalayas to Okayama,</em> we bring the warmth of Nepal, the soul of India, and the hospitality we found in Japan to every table.”</p>
+<div class="quote-by">Taj Namaste · Okayama</div>
+
+<div class="japan">
+  <div class="jp">いただきます</div>
+  <div class="txt">A shared table · Three cultures · One warm welcome</div>
+</div>
+
+<footer>Taj Namaste Indian Restaurant · Okayama, Japan</footer>
+</main>
+</body>
+</html>
